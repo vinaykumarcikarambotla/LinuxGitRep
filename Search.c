@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
 typedef struct Node{
 	int val;
 	struct Node *next;
@@ -13,7 +14,6 @@ void InsertNode(int temp){
 	new_node->val = temp;
 	new_node->next = head;
 	head = new_node;
-
 }
 
 void print(){
@@ -23,23 +23,18 @@ void print(){
 	     printf(" %d ", cursor->val);
 	     cursor = cursor->next;
 	  }
-
-
 }
 
 bool SearchElement(int n){
 	if(head == NULL){
 		return false;
 	}
-
 	if(head->val == n){
 		return true;
 	}
-
 	head = head->next;
 	return SearchElement(n);
 }
-
 
 bool SearchElementIteration(int n){
 	while(head!=NULL){
@@ -51,12 +46,9 @@ bool SearchElementIteration(int n){
 		}
 		return false;
 	}
-
 }
 
-
 int main(){
-
 	int n;
 	printf("\nEnter N:\n");
 	scanf("%d",&n);
@@ -86,7 +78,5 @@ int main(){
 	}
 
 return 0;
-
-
 }
 
