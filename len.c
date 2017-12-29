@@ -34,26 +34,13 @@ void LengthInIteration(){
 	printf("\nLength of the linked list with Iteration:%d\n",c);
 }
 
-int LengthInRecursion(int len){
+int LengthInRecursion(){
 	if(head == NULL){
-		printf("\n%d\n",len);
-		return len;
+		return 0;
 	}
-	if (head!=NULL) {
-		len++;
-		head = head->next;
-		LengthInRecursion(len);
-		}
-
-	return len;
-
-
+	head = head->next;
+	return 1 + LengthInRecursion();
 }
-
-
-
-
-
 
 int main(){
 	int n;
@@ -68,12 +55,7 @@ int main(){
 
 	print();
 	LengthInIteration();
-	int len=0;
-	int x;
-
-	x=LengthInRecusion(len);
-	printf("Length in recursion %d :\n",x);
-
+	printf("\nLength of the linked list with recursion :%d\n",LengthInRecursion());
 	return 0;
 }
 
